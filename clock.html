@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        background-color: black;
+    }
+    h1{
+        font-size: 100px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin: auto;
+        text-align: center;
+        color: red;
+    }
+</style>
+<body onload="str()">
+    <h1>Clock</h1>
+</body>
+<script type="text/javascript">
+    
+    function str(){
+            var date = new Date();
+            var h = date.getHours();
+            if(h < 10){
+                h = "0"+h;
+            }
+            if(h > 12){
+                h = h - 12;
+            }
+            var m = date.getMinutes();
+            if(m < 10){
+                m = "0"+m;
+            }
+            var s = date.getSeconds();
+            if(s < 10){
+                s = "0"+s;
+            }
+            var session = " AM"
+            var time = h + " : " + m + " : " + s + session;
+            if(h>=12){
+                session = "PM";
+            }
+            document.getElementsByTagName("h1")[0].innerText = time;
+            setTimeout(
+                str,
+                1000
+            );
+        }
+    
+</script>
+</html>

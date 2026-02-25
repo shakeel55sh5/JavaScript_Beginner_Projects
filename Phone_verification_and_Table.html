@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        border-bottom: 1px solid black;
+        width: 100px;
+    }
+    
+</style>
+<body>
+    Enter your phone number <br>
+    <input type="text" name="hod" id="hod" onkeyup="start(this)"><br>
+    <h1 id="hea"></h1><br>
+    <h1 id="count"></h1>
+    <button id="btn">Click</button>
+    <button onclick="stop()">Stop</button>
+    <button ondblclick="num()" id="num">Number</button>
+    
+</body>
+<script type="text/javascript">
+    function start(elem){
+        document.getElementById("hod").style.border = " 1px solid red";
+        if(isNaN(elem.value)){
+            document.getElementById("hea").innerHTML = "Please Enter number only";
+            document.getElementById("hea").style.color = "red";
+        }else if(elem.value.length > 10){
+            document.getElementById("hea").innerHTML = "Please Enter 10 numbers only";
+            document.getElementById("hea").style.color = "red";
+        }else{
+            document.getElementById("hea").innerText = "";
+        }
+    }
+    var i=0;
+    document.getElementById("btn").addEventListener("click",fun);
+        function fun(){
+
+            document.getElementById("count").innerText = i;
+            i++;
+        }
+    
+    function stop(){
+        // alert();
+        document.getElementById("count").removeEventListener("click",fun);
+    }
+    
+    // function num(){
+       var num1 = prompt("Enter a number","");
+       for(var i=1;i<=10;i++){
+        document.write("<div>");
+        document.write(num1 + " x " + i + " = " + i*num1 + "</br>");
+        document.write("</div>");
+       }
+    
+</script>
+</html>

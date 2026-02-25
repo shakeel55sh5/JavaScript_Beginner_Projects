@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="res"></h1>
+    <button onclick="pop()"><br>pop</button>
+    <h1 id="pop"></h1>
+    <button onclick="push()"><br>push</button>
+    <h1 id="push"></h1>
+</body>
+<script type="text/javascript">
+    var cars = ["car1","car2","car3","car4"];
+    // cars.forEach(car);
+    function car(item){
+        document.write(item+ "</br>");
+    }
+    
+    var fruits = ["maingo","orange","bananna"];
+    // var x = cars.valueOf();
+    // var x  = cars.concat(fruits);
+    // var x = cars.indexOf("car2");
+    // var x  = cars.join(" ! ");
+    // document.write(x);
+    var demo = ["bike1","bike2","bike3","bike4"];
+    document.getElementById("res").innerHTML = demo;
+    function pop(){
+        document.getElementById("pop").innerText = demo.pop();
+        document.getElementById("res").innerHTML = demo;
+    }
+    function push(){
+        var x = prompt("adding bike name","");
+        document.getElementById("push").innerText = demo.push(x);
+        document.getElementById("res").innerHTML = demo;
+    }
+    document.write(demo.reverse());
+    document.write(demo.slice(1,3));
+</script>
+</html>

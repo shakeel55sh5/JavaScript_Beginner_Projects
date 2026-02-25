@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #text{
+        
+        color: red;
+        font-size: 30px;
+        text-align: center;
+        transition-duration: 2s;
+    }
+</style>
+<body>
+    <button onclick="history()">Click</button>
+    <button onclick="zama()">close</button>
+    <button onclick="window.history.forward()">forward</button>
+    <button onclick="remove(this)">remove</button>
+    <button ondblclick="google()">google</button>
+    <button onclick="clicked()">Clicked</button>
+    <button ondblclick="stop()">Stop</button>
+    <h1 id="tim"></h1>
+    <button onclick="time()">time</button>
+    <button onclick="clearInterval(timeer)">Stop timer</button>
+    <h1 id="text" onmouseenter="text()" onmouseleave="textrm()">Hellow</h1>
+    <button onclick="fun()">fun</button>
+</body>
+<script type="text/javascript">
+    var my;
+    var count = 0;
+    function history(){
+        count++;
+       my =  window.open("calculator.html","height=500px","width=500px");
+       document.write(count);
+    }
+    function zama(){
+        window.close();
+        my.close();
+    }
+    function remove(elem){
+        elem.style.display = "none";
+    }
+    function google(){
+        
+        window.history.go("calculator.html","height=200px","width=500px")
+    }
+    var stoper;
+    function clicked(){
+
+       stoper = setInterval(
+            function(){
+                alert();
+            },
+            3000
+        );
+    }
+    function stop(){
+       clearInterval(stoper);
+    }
+    function time(){
+        var timeer = setTimeout(
+            function(){
+                alert();
+            },
+            4000
+        );
+    }
+    function text(){
+        document.getElementById("text").style.color = "blue";
+        document.getElementById("text").style.fontSize = "50px";
+        document.getElementsByTagName("h1")[1].style.opacity = "0.5";
+    }
+    function textrm(){
+        document.getElementById("text").style.color = "";
+        document.getElementById("text").style.fontSize = "30px";
+        document.getElementsByTagName("h1")[1].style.opacity = "1";
+    }
+    document.getElementsByTagName("h1")[0].innerText = "Hellow how are you";
+    function fun(){
+        window.print();
+    }
+</script>
+</html>
