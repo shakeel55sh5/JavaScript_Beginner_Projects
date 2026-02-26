@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="Quiz">
+        <h1>ETEA Quizz</h1>
+        Question: <p id="Question"></p>
+        <input type="radio" name="one1"><p id="one">Harsha Bhogle </p>
+        <input type="radio" name="one1"><p id="two">Ramiz Raja</p>
+        <input type="radio" name="one1"><p id="three">Nasir Hussain</p>
+        <br>
+        <button onclick="Next()">Next</button>
+    </div>
+</body>
+<script>
+    let Question = document.getElementById('Question');
+    let opt1 = document.getElementById('one');
+    let opt2 = document.getElementById('two');
+    let opt3 = document.getElementById('three');
+    const quest = [
+    "Kohli goes down the ground, Kohli goes out of the ground!",
+    "Batting like a Rolls Royce Babar Azam",
+    "Carlos Brathwaite, remember the name!",
+    "England win the World Cup by the barest of margins.",
+    "Pakistan cricket at its best",
+    "Dhoni finishes off in style. India lift the World Cup after 28 years!",
+    "They cannot play him",
+    "Sarfraz takes the catch its all over Pakistan win ",
+    "It's a hat-trick for Malinga! He's done it again!",
+    "An unbelievable shot from AB de Villiers!",
+];
+let answers = [
+    "Harsha Bhogle ",
+    "Ramiz Raja",
+    "Ian Bishop ",
+    "Ian Smith",
+    "Nasir Hussain",
+    "Ravi Shastri",
+    "Nasir Hussain",
+    "Ramiz Raja",
+    "Michael Atherton",
+    "David Lloyd",
+]
+Question.innerText = quest[0]
+function Next(){
+    let index = 1 + Math.floor((10 - 1) * Math.random());
+    Question.innerText = quest[index]
+    opt1.innerText = answers[index]
+    opt2.innerText = answers[index+1]
+    opt3.innerText = answers[index-1]
+    
+}
+</script>
+</html>
